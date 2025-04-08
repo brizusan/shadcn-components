@@ -26,6 +26,8 @@ const links = [
   { name: "sonner", href: "sonner" },
   { name: "tabs", href: "tabs" },
   { name: "dataTable", href: "data-table" },
+  { name: "formularios", href: "formulario" },
+  { name: "temas", href: "temas" },
 ].sort((a, b) => a.name.localeCompare(b.name));
 
 export default function DashboardLayout({
@@ -35,7 +37,7 @@ export default function DashboardLayout({
 }) {
   return (
     <>
-      <nav className="bg-white border-b border-gray-200 fixed z-30 w-full">
+      <nav className="bg-white dark:bg-slate-900 border-b border-gray-200 dark:border-none fixed z-30 w-full">
         <div className="px-3 py-3 lg:px-5 lg:pl-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center justify-start">
@@ -122,21 +124,21 @@ export default function DashboardLayout({
           </div>
         </div>
       </nav>
-      <div className="flex overflow-hidden bg-white pt-16">
+      <div className="flex overflow-hidden bg-white dark:bg-slate-900 pt-16">
         <aside
           id="sidebar"
           className="fixed hidden z-20 h-full top-0 left-0 pt-16 lg:flex flex-shrink-0 flex-col w-64 transition-width duration-75"
           aria-label="Sidebar"
         >
-          <div className="relative flex-1 flex flex-col min-h-0 borderR border-gray-200 bg-white pt-0">
+          <div className="relative flex-1 flex flex-col min-h-0 border border-gray-200 dark:border-none bg-white dark:bg-slate-800 pt-0">
             <div className="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
-              <div className="flex-1 px-3 bg-white divide-y space-y-1">
+              <div className="flex-1 px-3 bg-white dark:bg-slate-800 divide-y space-y-1">
                 <ul className="space-y-2 pb-2">
                   {links.map((link) => (
                     <li key={link.href}>
                       <Link
                         href={link.href}
-                        className="text-base capitalize text-gray-900 font-normal rounded-lg flex items-center p-2 hover:bg-gray-100 group"
+                        className="text-base capitalize text-gray-800 dark:text-gray-50 font-normal rounded-lg flex items-center p-2 hover:bg-gray-100 dark:hover:bg-slate-600 group"
                       >
                         <span className="ml-3">{link.name}</span>
                       </Link>
@@ -153,23 +155,23 @@ export default function DashboardLayout({
         ></div>
         <div
           id="main-content"
-          className="h-full w-full bg-gray-50 relative overflow-y-auto lg:ml-64"
+          className="h-full w-full bg-gray-50 dark:bg-slate-950 relative overflow-y-auto lg:ml-64"
         >
           <main>
             <div className="pt-6 px-4">
               <div className="w-full min-h-[calc(100vh-230px)]">
-                <div className="bg-white shadow rounded-lg p-4 sm:p-6 xl:p-8">
+                <div className="bg-white dark:bg-slate-800  shadow dark:shadow-none rounded-lg p-4 sm:p-6 xl:p-8">
                   {children}
                 </div>
               </div>
             </div>
           </main>
-          <footer className="print:hidden bg-white md:flex md:items-center md:justify-between shadow rounded-lg p-4 md:p-6 xl:p-8 my-6 mx-4">
+          <footer className="print:hidden bg-white dark:bg-slate-800  md:flex md:items-center md:justify-between shadow rounded-lg p-4 md:p-6 xl:p-8 my-6 mx-4">
             <ul className="flex items-center flex-wrap mb-6 md:mb-0">
               <li>
                 <a
                   href="#"
-                  className="text-sm font-normal text-gray-500 hover:underline mr-4 md:mr-6"
+                  className="text-sm font-normal text-gray-500 dark:text-gray-50 hover:underline mr-4 md:mr-6"
                 >
                   Terms and conditions
                 </a>
@@ -177,7 +179,7 @@ export default function DashboardLayout({
               <li>
                 <a
                   href="#"
-                  className="text-sm font-normal text-gray-500 hover:underline mr-4 md:mr-6"
+                  className="text-sm font-normal text-gray-500 dark:text-gray-50 hover:underline mr-4 md:mr-6"
                 >
                   Privacy Policy
                 </a>
@@ -185,7 +187,7 @@ export default function DashboardLayout({
               <li>
                 <a
                   href="#"
-                  className="text-sm font-normal text-gray-500 hover:underline mr-4 md:mr-6"
+                  className="text-sm font-normal text-gray-500 dark:text-gray-50 hover:underline mr-4 md:mr-6"
                 >
                   Licensing
                 </a>
@@ -193,7 +195,7 @@ export default function DashboardLayout({
               <li>
                 <a
                   href="#"
-                  className="text-sm font-normal text-gray-500 hover:underline mr-4 md:mr-6"
+                  className="text-sm font-normal text-gray-500 dark:text-gray-50 hover:underline mr-4 md:mr-6"
                 >
                   Cookie Policy
                 </a>
@@ -201,7 +203,7 @@ export default function DashboardLayout({
               <li>
                 <a
                   href="#"
-                  className="text-sm font-normal text-gray-500 hover:underline"
+                  className="text-sm font-normal text-gray-500 dark:text-gray-50 hover:underline"
                 >
                   Contact
                 </a>
